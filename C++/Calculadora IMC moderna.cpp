@@ -19,6 +19,7 @@ int main ()
     imc=peso/(altura*altura);
     cout<<"IMC:"<<imc<<endl;
     cout<<"classificação: "<<endl;
+    
     if(imc<16.9||imc==16.9)
     {
         cout<<"Muito abaixo do peso "<<endl;
