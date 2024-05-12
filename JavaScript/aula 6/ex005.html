@@ -6,13 +6,32 @@
     <title>Ex006</title>
 </head>
 <body>
+    <main>
+        <h1> <strong>BORA CAGARRRRR</strong> </h1>
+    </main>
     
 
     <script>
-        var numero=pormpt("Digite um numero qualquer! ")
+        //var qualquer=(prompt("Digite qualque coisa que der vontade seu coco "))
 
+      //  document.write(`seu número por extenso é: ${numero+numero}`)
 
+       // document.write(`Essa caca ${qualquer} tem ${qualquer.length} caracteres <br>`)
+
+        var dólar=Number(prompt("Digite o valor que quer passar para real "))
         
+        var cambio=prompt("Digite o valor do cambio atual ")
+        var real=(dólar*cambio)
+
+      
+
+
+      document.write(`valor em real é: ${ real.toLocaleString('pt-BR',{style:'currency:BRL'})
+       }`)
+        
+
+
+
     </script>
 </body>
 </html>
