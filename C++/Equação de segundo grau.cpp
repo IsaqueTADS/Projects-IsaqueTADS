@@ -6,7 +6,7 @@ int main (){
     setlocale(LC_ALL,"portuguese");
     float a,b,c,delta,rd,r1,r2;
 
-    cout<<"CALCULADORA DE EQUA??O DE SEGUNDO GRAU "<<endl;
+    cout<<"CALCULADORA DE EQUAÇÃO DE SEGUNDO GRAU "<<endl;
     cout<<"A fórmula de Bhaskara"<<endl;
     cout<<"copyright © Isaque Rodrigues Alves"<<endl;
 
