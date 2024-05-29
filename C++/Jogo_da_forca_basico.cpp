@@ -14,18 +14,19 @@ int main(){
 
 
 
-    cout<<"JOGO DA FOCAR V1.0 "<<endl;
-    cout<<"project by Isaque Rodrigues Alves"<<endl;
+    cout<<"JOGO DA FORCA V1.0 "<<endl;
+    cout<<"project by Isaque Rodrigues Alves\n"<<endl;
     system("pause");
 
-    cout<<"[1] Jogar";
-    cout<<"[2] Sair";
-    cout<<"Escolha uma das opÃ§Ãµes acima! "<<endl;
+    cout<<"[1] Jogar\n";
+    cout<<"[2] Sair\n";
+    cout<<"Escolha uma das opções acima! "<<endl;
     cin>>opc;
 
     switch(opc){
         
         case 1:
+        system("cls");
 
          indice = 0;
          tamanho = 0;
@@ -33,6 +34,7 @@ int main(){
     }
 
     while(opc == 2){
+        system("cls");
         break;
     }
 
