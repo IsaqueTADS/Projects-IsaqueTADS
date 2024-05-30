@@ -24,6 +24,8 @@ int main(){
     cout<<"Escolha uma das opções acima! "<<endl;
     cin>>opc;
 
+    loop:
+
     switch(opc){
         
         case 1:
@@ -76,15 +78,20 @@ int main(){
 
                 }
 
-                system("cls");
-
 
             }
-            if(!acerto)
+
+            if(!acerto){
 
                 vidas --;
-        
+
+            }
+
+             acerto = false;
+             system("cls");
+   
          }
+
 
          if(acertos == tamanho){
 
@@ -99,6 +106,17 @@ int main(){
                 cout<<"                      \n";
                 cout<<"         _.' '._        \n";
                 cout<<"        '-------'       \n\n";
+
+                cout<<"Jogar novamente? "<<endl;
+                cout<<"[1] Sim "<<endl;
+                cout<<"[2] Não "<<endl;
+                cin>>opc;
+
+                if(opc == 1){
+
+                    goto loop;
+                    
+                }
          }else
          {
 
@@ -127,6 +145,14 @@ int main(){
                 cout<<"[1] Sim "<<endl;
                 cout<<"[2] Não "<<endl;
                 cin>>opc;
+
+                if(opc == 1){
+
+                    goto loop;
+
+                }
+
+
             
 
          }
