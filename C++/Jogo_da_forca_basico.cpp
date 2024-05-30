@@ -51,27 +51,80 @@ int main(){
 
          for(indice = 0; indice < 60; indice++){
 
-            forca[indice] = '_';
+            forca[indice] = '-';
 
          }
          
-         while(vidas > 0 && acertos < tamanho){
+         while((vidas > 0) && (acertos < tamanho)){
             cout<<"Vidas restante: "<<vidas<<endl;
             cout<<"Forca: ";
             for(indice = 0; indice < tamanho; indice ++){
+                
+            cout<<forca[indice];
 
-                cout<<forca[indice];
+            }  
+            cout<<"\n"<<endl;
+            cout<<"Chute uma letra: "<<endl;
+            cin>>chute[0];
+
+            for(indice = 0; indice < tamanho; indice ++){
+
+                if (palavra[indice] == chute[0]){
+                    acerto = true;
+                    forca[indice] = palavra[indice];
+                    acertos ++;
+
+                }
+
+                system("cls");
+
 
             }
+            if(!acerto)
 
+                vidas --;
+        
+         }
 
-            break;
+         if(acertos == tamanho){
 
+                cout<<"Parabens você acertou!! "<<endl;
+                cout<<"       ___________      \n";
+                cout<<"      '._==_==_=_.'     \n";
+                cout<<"      .-\\:      /-.    \n";
+                cout<<"     | |:.     | |    \n";
+                cout<<"      '-|:.     |-'     \n";
+                cout<<"        \\::.    /      \n";
+                cout<<"         '::. .'        \n";
+                cout<<"                      \n";
+                cout<<"         _.' '._        \n";
+                cout<<"        '-------'       \n\n";
+         }else
+         {
 
+                cout<<"Poxa você perdeu e foi enfocardo ;-;-; ";
+                cout<<"A palavra era: "<<palavra<<endl;
+            
+                cout<<"    _______________         \n";
+                cout<<"   /               \\       \n"; 
+                cout<<"  /                 \\      \n";
+                cout<<"//                   \\/\\  \n";
+                cout<<"\\|   XXXX     XXXX   | /   \n";
+                cout<<" |   XXXX     XXXX   |/     \n";
+                cout<<" |   XXX       XXX   |      \n";
+                cout<<" |                   |      \n";
+                cout<<" \\__      XXX      __/     \n";
+                cout<<"   |\\     XXX     /|       \n";
+                cout<<"   | |           | |        \n";
+                cout<<"   | I I I I I I I |        \n";
+                cout<<"   |  I I I I I I  |        \n";
+                cout<<"   \\_             _/       \n";
+                cout<<"     \\_         _/         \n";
+                cout<<"       \\_______/           \n";
 
          }
 
-
+        
     
     }
 
