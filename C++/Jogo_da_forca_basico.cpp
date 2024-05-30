@@ -120,7 +120,14 @@ int main(){
                 cout<<"   |  I I I I I I  |        \n";
                 cout<<"   \\_             _/       \n";
                 cout<<"     \\_         _/         \n";
-                cout<<"       \\_______/           \n";
+                cout<<"       \\_______/           \n\n";
+
+
+                cout<<"Jogar novamente? "<<endl;
+                cout<<"[1] Sim "<<endl;
+                cout<<"[2] Não "<<endl;
+                cin>>opc;
+            
 
          }
 
