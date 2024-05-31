@@ -8,9 +8,10 @@ int main(){
 
     setlocale(LC_ALL,"portuguese_Brazil");
 
-    char palavra[60], chute[1], forca[60];
+    char palavra[60], chute[1], forca[60], usadas[60];
     int opc, indice, tamanho, vidas, acertos;
     bool acerto;
+    string usadas2;
 
 
 
@@ -59,6 +60,7 @@ int main(){
          
          while((vidas > 0) && (acertos < tamanho)){
             cout<<"Vidas restante: "<<vidas<<endl;
+            cout<<"Letras usadas: "<<usadas[0]<<usadas[1]<<endl;
             cout<<"Forca: ";
             for(indice = 0; indice < tamanho; indice ++){
                 
@@ -68,6 +70,13 @@ int main(){
             cout<<"\n"<<endl;
             cout<<"Chute uma letra: "<<endl;
             cin>>chute[0];
+
+            for(indice = 0; indice < 60; indice ++){
+
+              usadas[indice] = chute[0];
+                break;
+
+            }
 
             for(indice = 0; indice < tamanho; indice ++){
 
@@ -152,12 +161,7 @@ int main(){
 
                 }
 
-
-            
-
-         }
-
-        
+         }   
     
     }
 
@@ -171,3 +175,6 @@ int main(){
 
     return 0;
 }
+
+
+
