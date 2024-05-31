@@ -4,18 +4,77 @@
 
 using namespace std;
 
+   char palavra[60], chute[1], forca[60];
+   int opc, difi, i, tamanho, vidas, acertos;
+   bool acerto;
+    
+   void inicio ();
+   void dificuldade ();
+   void facil();
+   
+
 int main(){
 
     setlocale(LC_ALL,"portuguese_Brazil");
 
-    char palavra[60], chute[1], forca[60];
-    int opc, indice, tamanho, vidas, acertos;
-    bool acerto;
-   
+    
+    inicio();
+    
+
+    switch(opc){
+        
+        case 1:
+       
+          dificuldade();
+
+        case 2:
+
+           dificuldade();
+
+            
+        case 3:
+              
+           system("cls");
+
+           cout<<"Obrigado por jogar meu jogo v3 "<<endl;
+
+           break;
+    
+    }
+
+    while(opc == 2){
+        system("cls");
+        break;
+    }
+
+    switch(difi){
+
+        case 1:
+
+            facil();
+
+       
+
+
+    }
+    
+    while(difi == 5){
+        system("cls");
+
+
+       cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
+        break;
+    }
 
 
 
-    cout<<"JOGO DA FORCA V1.0 "<<endl;
+    return 0;
+}
+
+
+void inicio(){
+
+    cout<<"JOGO DA FORCA V2.0 "<<endl;
     cout<<"project by Isaque Rodrigues Alves\n"<<endl;
     system("pause");
     system("cls");
@@ -25,14 +84,31 @@ int main(){
     cout<<"Escolha uma das opções acima! "<<endl;
     cin>>opc;
 
+
+}
+
+void dificuldade(){
+    system("cls");
+
+    cout<<"DIFICULDADE DO JOGO !\n "<<endl;
+
+    cout<<"[1] Facil  [3] Dificil"<<endl;
+    cout<<"[2] Normal [ ] INSANOO"<<endl;
+    cout<<"[5] Sair "<<endl;
+    cout<<"Escolha uma das opções acima: "<<endl;
+    cin>>difi;
+
+
+}
+
+
+void facil (){
+
     loop:
 
-    switch(opc){
-        
-        case 1:
-        system("cls");
+     system("cls");
 
-         indice = 0;
+         i = 0;
          tamanho = 0;
          acertos = 0;
          acerto = false;
@@ -42,41 +118,36 @@ int main(){
          cin>>palavra;
          system("cls");
 
-         while(palavra[indice] != '\0' ){
+         while(palavra[i] != '\0' ){
 
-            indice ++;
+            i ++;
             tamanho ++;
 
          }
 
-         for(indice = 0; indice < 60; indice++){
+         for(i = 0; i < 60; i++){
 
-            forca[indice] = '-';
+            forca[i] = '-';
 
          }
          
          while((vidas > 0) && (acertos < tamanho)){
             cout<<"Vidas restante: "<<vidas<<endl;
-
-           
-
-            
-
             cout<<"Forca: ";
-            for(indice = 0; indice < tamanho; indice ++){
+            for(i = 0; i < tamanho; i ++){
                 
-            cout<<forca[indice];
+            cout<<forca[i];
 
             }  
             cout<<"\n"<<endl;
             cout<<"Chute uma letra: "<<endl;
             cin>>chute[0];
 
-            for(indice = 0; indice < tamanho; indice ++){
+            for(i = 0; i < tamanho; i ++){
 
-                if (palavra[indice] == chute[0]){
+                if (palavra[i] == chute[0]){
                     acerto = true;
-                    forca[indice] = palavra[indice];
+                    forca[i] = palavra[i];
                     acertos ++;
 
                 }
@@ -114,8 +185,9 @@ int main(){
                 cout<<"        '-------'       \n\n";
 
                 cout<<"Jogar novamente? "<<endl;
-                cout<<"[1] Sim "<<endl;
-                cout<<"[2] Não "<<endl;
+                cout<<"[1] jogar a mesma dificuldade "<<endl;
+                cout<<"[2] Escolher outra dificuldade"<<endl;
+                cout<<"[3] Sair "<<endl;
                 cin>>opc;
 
                 if(opc == 1){
@@ -148,8 +220,9 @@ int main(){
 
 
                 cout<<"Jogar novamente? "<<endl;
-                cout<<"[1] Sim "<<endl;
-                cout<<"[2] Não "<<endl;
+                cout<<"[1] jogar a mesma dificuldade "<<endl;
+                cout<<"[2] Escolher outra dificuldade"<<endl;
+                cout<<"[3] Sair "<<endl;
                 cin>>opc;
 
                 if(opc == 1){
@@ -159,16 +232,8 @@ int main(){
                 }
 
          }   
-    
-    }
-
-    while(opc == 2){
-        system("cls");
-        break;
-    }
 
 
 
 
-    return 0;
 }
