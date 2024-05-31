@@ -4,7 +4,7 @@
 
 using namespace std;
 
-   char palavra[60], chute[1], forca[60];
+   char palavra[60], chute[1], forca[60], usada1[60], usada2[60];
    int opc, difi, i, tamanho, vidas, acertos;
    bool acerto;
     
@@ -87,6 +87,8 @@ void dificuldade(){
 
 void facil (){
 
+    int i1=1;
+
     loop:
 
      system("cls");
@@ -101,32 +103,51 @@ void facil (){
          cin>>palavra;
          system("cls");
 
-         while(palavra[i] != '\0' ){
+         while(palavra[i] != '\0' )
+         {
 
             i ++;
             tamanho ++;
 
          }
 
-         for(i = 0; i < 60; i++){
+         for(i = 0; i < 60; i++)
+         {
 
             forca[i] = '-';
 
          }
          
-         while((vidas > 0) && (acertos < tamanho)){
+         while((vidas > 0) && (acertos < tamanho))
+         {
             cout<<"Vidas restante: "<<vidas<<endl;
+
+            cout<<"Palavras usadas: ";
+            for(i = 0; i < tamanho; i ++)
+            {
+
+                cout<<usada1[i];
+
+            }
+
+            cout<<"\n";
+
             cout<<"Forca: ";
-            for(i = 0; i < tamanho; i ++){
+            for(i = 0; i < tamanho; i ++)
+            {
                 
             cout<<forca[i];
 
-            }  
+            } // esse for exibe os chutes se for certo.
+
+            
+
             cout<<"\n"<<endl;
             cout<<"Chute uma letra: "<<endl;
             cin>>chute[0];
 
-            for(i = 0; i < tamanho; i ++){
+            for(i = 0; i < tamanho; i ++)
+            {
 
                 if (palavra[i] == chute[0]){
                     acerto = true;
@@ -137,6 +158,13 @@ void facil (){
                 //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
 
             }
+
+            for(i = 0; i < i1; i++)
+            {
+
+            }
+            
+          
 
             if(!acerto){
 
