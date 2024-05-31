@@ -27,24 +27,7 @@ int main(){
        
           dificuldade();
 
-        case 2:
-
-           dificuldade();
-
-            
-        case 3:
-              
-           system("cls");
-
-           cout<<"Obrigado por jogar meu jogo v3 "<<endl;
-
-           break;
     
-    }
-
-    while(opc == 2){
-        system("cls");
-        break;
     }
 
     switch(difi){
@@ -58,14 +41,7 @@ int main(){
 
     }
     
-    while(difi == 5){
-        system("cls");
-
-
-       cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
-        break;
-    }
-
+    
 
 
     return 0;
@@ -75,15 +51,15 @@ int main(){
 void inicio(){
 
     cout<<"JOGO DA FORCA V2.0 "<<endl;
-    cout<<"project by Isaque Rodrigues Alves\n"<<endl;
+    cout<<"===================="<<endl;
+    cout<<"Criador: IsaqueTADS"<<endl;
+    cout<<"Isaque Rodrigues Alves\n "<<endl;
+
+    cout<<"Instragam:\n@isaquetads \n@isaque_rodriguesdev\n\n "<<endl;
     system("pause");
     system("cls");
 
-    cout<<"[1] Jogar\n";
-    cout<<"[2] Sair\n";
-    cout<<"Escolha uma das opções acima! "<<endl;
-    cin>>opc;
-
+    dificuldade();
 
 }
 
@@ -98,6 +74,13 @@ void dificuldade(){
     cout<<"Escolha uma das opções acima: "<<endl;
     cin>>difi;
 
+    while(difi == 5){
+        system("cls");
+
+
+       cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
+        break;
+    }
 
 }
 
@@ -165,8 +148,6 @@ void facil (){
              system("cls");
 
             
-
-   
          }
 
 
@@ -193,8 +174,21 @@ void facil (){
                 if(opc == 1){
 
                     goto loop;
+
+                }else if (opc == 2)
+                {
+
+                    dificuldade();
+
+                }else
+                {
+                    system("cls");
+
+                    cout<<"Obrigado por jogar meu jogo v3 "<<endl;
                     
                 }
+                
+         
          }else
          {
 
@@ -229,7 +223,22 @@ void facil (){
 
                     goto loop;
 
+                }else if (opc == 2)
+                {
+
+                    dificuldade();
+
+                }else
+                {
+                    system("cls");
+
+                    cout<<"Obrigado por jogar meu jogo v3 "<<endl;
+                   
                 }
+         
+                
+
+               
 
          }   
 
