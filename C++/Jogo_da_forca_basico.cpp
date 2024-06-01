@@ -11,6 +11,7 @@ using namespace std;
    void inicio ();
    void dificuldade ();
    void facil();
+   void normal();
    void ganhou();
    void perdeu();
 
@@ -64,16 +65,17 @@ void dificuldade(){
     switch(difi){
 
         case 1:
+
         facil();
+        
+        case 2:
+
+        normal();
     }
 
 }
 
 void facil (){
-
-   
-
-    
 
      system("cls");
 
@@ -83,6 +85,7 @@ void facil (){
          acertos = 0;
          acerto = false;
          vidas = 10;
+         errou = 0;
 
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
@@ -188,6 +191,121 @@ void facil (){
 
 }
 
+void normal(){
+
+     system("cls");
+
+         i = 0;
+         i1 = 1;
+         tamanho = 0;
+         acertos = 0;
+         acerto = false;
+         vidas = 6;
+         errou = 0;
+
+         cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
+         cin>>palavra;
+         system("cls");
+
+         while(palavra[i] != '\0' )
+         {
+
+            i ++;
+            tamanho ++;
+
+         }
+
+         for(i = 0; i < 60; i++)
+         {
+
+            forca[i] = '_';
+            usada1[i] = '-';
+
+         }
+         
+         while((vidas > 0) && (acertos < tamanho))
+         {
+            cout<<"Vidas restante: "<<vidas<<endl;
+
+            cout<<"Palavras usadas: ";
+
+            for(i = 0; i < tamanho; i ++)
+            {
+
+                cout<<usada1[i];
+
+            }
+
+            cout<<"\n";
+
+            cout << "  _______       \n";
+            cout << " |/      |      \n";
+            cout << " |      " << (errou >= 1 ? '(' : ' ') << (errou >= 1 ? '_' : ' ') << (errou >= 1 ? ')' : ' ') << "  \n";
+            cout << " |      " << (errou >= 2 ? '\\' : ' ') << (errou >= 2 ? '|' : ' ') << (errou >= 2 ? '/' : ' ') << "  \n";
+            cout << " |       " << (errou >= 3 ? '|' : ' ') << "     \n";
+            cout << " |      " << (errou >= 4 ? '/' : ' ') << " " << (errou >= 5 ? '\\' : ' ') << "   \n";
+            cout << " |              \n";
+            cout << "_|___  ";
+            for(i = 0; i < tamanho; i ++)
+            {
+                
+            cout<<forca[i];
+
+            } // esse for exibe os chutes se for certo.
+
+            
+
+            cout<<"\n"<<endl;
+            cout<<"Chute uma letra: "<<endl;
+            for(i = 0; i < tamanho; i++)
+            {
+                cin>>chute[i];
+                break;
+            }
+            
+
+            for(i = 0; i < tamanho; i ++)
+            {
+                for(i1 = 0; i1 < tamanho; i1++)
+
+                if (palavra[i] == chute[i1]){
+                    acerto = true;
+                    forca[i] = palavra[i];
+                    acertos ++;
+
+                }
+                //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
+
+            }
+            
+
+            if(!acerto){
+
+                vidas --;
+                errou ++;
+
+            }
+
+             acerto = false;
+             system("cls");
+ 
+         }
+
+         if(acertos == tamanho){
+
+                ganhou();
+         
+         }else
+         {
+
+               
+                perdeu();
+         }   
+
+
+
+
+}
 void ganhou (){
 
                 cout<<"Parabens você acertou!! "<<endl;
