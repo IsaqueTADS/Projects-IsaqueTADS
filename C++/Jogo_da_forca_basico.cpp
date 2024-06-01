@@ -11,7 +11,8 @@ using namespace std;
    void inicio ();
    void dificuldade ();
    void facil();
-   
+   void ganhou();
+   void perdeu();
 
 int main(){
 
@@ -19,28 +20,7 @@ int main(){
 
     
     inicio();
-    
-
-    switch(opc){
-        
-        case 1:
-       
-          dificuldade();
-
-    
-    }
-
-    switch(difi){
-
-        case 1:
-
-            facil();
-
-       
-
-
-    }
-    
+    dificuldade();
     
 
 
@@ -59,7 +39,6 @@ void inicio(){
     system("pause");
     system("cls");
 
-    dificuldade();
 
 }
 
@@ -81,15 +60,20 @@ void dificuldade(){
        cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
         break;
     }
+    
+    switch(difi){
+
+        case 1:
+        facil();
+    }
 
 }
-
 
 void facil (){
 
    
 
-    loop:
+    
 
      system("cls");
 
@@ -139,7 +123,7 @@ void facil (){
             cout << " |/      |      \n";
             cout << " |      " << (errou >= 1 ? '(' : ' ') << (errou >= 2 ? '_' : ' ') << (errou >= 3 ? ')' : ' ') << "  \n";
             cout << " |      " << (errou >= 4 ? '\\' : ' ') << (errou >= 5 ? '|' : ' ') << (errou >= 6 ? '/' : ' ') << "  \n";
-            cout << " |      " << (errou >= 7 ? '|' : ' ') << "     \n";
+            cout << " |       " << (errou >= 7 ? '|' : ' ') << "     \n";
             cout << " |      " << (errou >= 8 ? '/' : ' ') << " " << (errou >= 9 ? '\\' : ' ') << "   \n";
             cout << " |              \n";
             cout << "_|___  ";
@@ -175,7 +159,6 @@ void facil (){
 
             }
             
-          
 
             if(!acerto){
 
@@ -186,12 +169,26 @@ void facil (){
 
              acerto = false;
              system("cls");
-
-            
+ 
          }
 
-
          if(acertos == tamanho){
+
+                ganhou();
+         
+         }else
+         {
+
+               
+                perdeu();
+         }   
+
+
+
+
+}
+
+void ganhou (){
 
                 cout<<"Parabens você acertou!! "<<endl;
                 cout<<"       ___________      \n";
@@ -206,16 +203,12 @@ void facil (){
                 cout<<"        '-------'       \n\n";
 
                 cout<<"Jogar novamente? "<<endl;
-                cout<<"[1] jogar a mesma dificuldade "<<endl;
-                cout<<"[2] Escolher outra dificuldade"<<endl;
-                cout<<"[3] Sair "<<endl;
+                cout<<"[1] jogar novamnete "<<endl;
+                cout<<"[2] Sair "<<endl;
+                
                 cin>>opc;
 
-                if(opc == 1){
-
-                    goto loop;
-
-                }else if (opc == 2)
+                if (opc == 1)
                 {
 
                     dificuldade();
@@ -227,10 +220,10 @@ void facil (){
                     cout<<"Obrigado por jogar meu jogo v3 "<<endl;
                     
                 }
-                
-         
-         }else
-         {
+    
+}
+
+void perdeu (){
 
                 cout<<"Poxa você perdeu e foi enfocardo ;-;-; ";
                 cout<<"A palavra era: "<<palavra<<endl;
@@ -254,16 +247,11 @@ void facil (){
 
 
                 cout<<"Jogar novamente? "<<endl;
-                cout<<"[1] jogar a mesma dificuldade "<<endl;
-                cout<<"[2] Escolher outra dificuldade"<<endl;
-                cout<<"[3] Sair "<<endl;
+                cout<<"[1] jogar novamente "<<endl;
+                cout<<"[2] Sair "<<endl;
                 cin>>opc;
 
-                if(opc == 1){
-
-                    goto loop;
-
-                }else if (opc == 2)
+                 if (opc == 1)
                 {
 
                     dificuldade();
@@ -277,12 +265,6 @@ void facil (){
                 }
          
                 
-
-               
-
-         }   
-
-
 
 
 }
