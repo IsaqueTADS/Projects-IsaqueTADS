@@ -5,7 +5,7 @@
 using namespace std;
 
    char palavra[60], chute[60], forca[60], usada1[60], usada2[60];
-   int opc, difi, i, i1, tamanho, vidas, acertos;
+   int opc, difi, i, i1, tamanho, vidas, acertos,errou;
    bool acerto;
     
    void inicio ();
@@ -115,7 +115,7 @@ void facil (){
          for(i = 0; i < 60; i++)
          {
 
-            forca[i] = '-';
+            forca[i] = '_';
             usada1[i] = '-';
 
          }
@@ -135,7 +135,14 @@ void facil (){
 
             cout<<"\n";
 
-            cout<<"Forca: ";
+            cout << "  _______       \n";
+            cout << " |/      |      \n";
+            cout << " |      " << (errou >= 1 ? '(' : ' ') << (errou >= 1 ? '_' : ' ') << (errou >= 1 ? ')' : ' ') << "  \n";
+            cout << " |      " << (errou >= 3 ? '\\' : ' ') << (errou >= 2 ? '|' : ' ') << (errou >= 3 ? '/' : ' ') << "  \n";
+            cout << " |       " << (errou >= 2 ? '|' : ' ') << "     \n";
+            cout << " |      " << (errou >= 4 ? '/' : ' ') << " " << (errou >= 4 ? '\\' : ' ') << "   \n";
+            cout << " |              \n";
+            cout << "_|___  ";
             for(i = 0; i < tamanho; i ++)
             {
                 
@@ -173,6 +180,7 @@ void facil (){
             if(!acerto){
 
                 vidas --;
+                errou ++;
 
             }
 
