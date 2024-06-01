@@ -4,8 +4,8 @@
 
 using namespace std;
 
-   char palavra[60], chute[60], forca[60], usada1[60], usada2[60];
-   int opc, difi, i, i1, tamanho, vidas, acertos,errou;
+   char palavra[60], chute[60], forca[60], usada1[60], usada2[60], dica[60];
+   int opc, difi, i, i1, tamanho, dtamanho, vidas, acertos,errou;
    bool acerto;
     
    void inicio ();
@@ -77,6 +77,8 @@ void dificuldade(){
 
 void facil (){
 
+    setlocale(LC_ALL,"portuguese_Brazil");
+
      system("cls");
 
          i = 0;
@@ -89,6 +91,9 @@ void facil (){
 
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
+         system("cls");
+         cout << "A palavra que você escolheu é? (ex, cidade, animal, frute, etc...) "<<endl;
+         cin>>dica;
          system("cls");
 
          while(palavra[i] != '\0' )
@@ -109,6 +114,8 @@ void facil (){
          
          while((vidas > 0) && (acertos < tamanho))
          {
+            cout<<"Dica: "<<dica<<endl;
+           
             cout<<"Vidas restante: "<<vidas<<endl;
 
             cout<<"Palavras usadas: ";
@@ -193,6 +200,8 @@ void facil (){
 
 void normal(){
 
+    setlocale(LC_ALL,"portuguese_Brazil");
+
      system("cls");
 
          i = 0;
@@ -205,6 +214,9 @@ void normal(){
 
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
+         system("cls");
+         cout << "A palavra que você escolheu é? (ex, cidade, animal, frute, etc...) "<<endl;
+         cin>>dica;
          system("cls");
 
          while(palavra[i] != '\0' )
@@ -225,6 +237,8 @@ void normal(){
          
          while((vidas > 0) && (acertos < tamanho))
          {
+             cout<<"Dica: "<<dica<<endl;
+
             cout<<"Vidas restante: "<<vidas<<endl;
 
             cout<<"Palavras usadas: ";
@@ -308,79 +322,83 @@ void normal(){
 }
 void ganhou (){
 
-                cout<<"Parabens você acertou!! "<<endl;
-                cout<<"       ___________      \n";
-                cout<<"      '._==_==_=_.'     \n";
-                cout<<"      .-\\:      /-.    \n";
-                cout<<"     | |:.     | |    \n";
-                cout<<"      '-|:.     |-'     \n";
-                cout<<"        \\::.    /      \n";
-                cout<<"         '::. .'        \n";
-                cout<<"                      \n";
-                cout<<"         _.' '._        \n";
-                cout<<"        '-------'       \n\n";
+    setlocale(LC_ALL,"portuguese_Brazil");
 
-                cout<<"Jogar novamente? "<<endl;
-                cout<<"[1] jogar novamnete "<<endl;
-                cout<<"[2] Sair "<<endl;
-                
-                cin>>opc;
+         cout<<"Parabens você acertou!! "<<endl;
+         cout<<"       ___________      \n";
+         cout<<"      '._==_==_=_.'     \n";
+         cout<<"      .-\\:      /-.    \n";
+         cout<<"     | |:.     | |    \n";
+         cout<<"      '-|:.     |-'     \n";
+         cout<<"        \\::.    /      \n";
+         cout<<"         '::. .'        \n";
+         cout<<"                      \n";
+         cout<<"         _.' '._        \n";
+         cout<<"        '-------'       \n\n";
 
-                if (opc == 1)
-                {
+         cout<<"Jogar novamente? "<<endl;
+         cout<<"[1] jogar novamnete "<<endl;
+         cout<<"[2] Sair "<<endl;        
+         cin>>opc;
+
+             if (opc == 1)
+            {
 
                     dificuldade();
 
-                }else
-                {
-                    system("cls");
+            }else
+            {
+                system("cls");
 
-                    cout<<"Obrigado por jogar meu jogo v3 "<<endl;
+                cout<<"Obrigado por jogar meu jogo v3 "<<endl;
                     
-                }
+            }
     
 }
 
 void perdeu (){
 
-                cout<<"Poxa você perdeu e foi enfocardo ;-;-; ";
-                cout<<"A palavra era: "<<palavra<<endl;
+    setlocale(LC_ALL,"portuguese_Brazil");
+
+        cout<<"Poxa você perdeu e foi enfocardo ;-;-; ";
+        cout<<"A palavra era: "<<palavra<<endl;
             
-                cout<<"    _______________         \n";
-                cout<<"   /               \\       \n"; 
-                cout<<"  /                 \\      \n";
-                cout<<"//                   \\/\\  \n";
-                cout<<"\\|   XXXX     XXXX   | /   \n";
-                cout<<" |   XXXX     XXXX   |/     \n";
-                cout<<" |   XXX       XXX   |      \n";
-                cout<<" |                   |      \n";
-                cout<<" \\__      XXX      __/     \n";
-                cout<<"   |\\     XXX     /|       \n";
-                cout<<"   | |           | |        \n";
-                cout<<"   | I I I I I I I |        \n";
-                cout<<"   |  I I I I I I  |        \n";
-                cout<<"   \\_             _/       \n";
-                cout<<"     \\_         _/         \n";
-                cout<<"       \\_______/           \n\n";
+        cout<<"    _______________         \n";
+        cout<<"   /               \\       \n"; 
+        cout<<"  /                 \\      \n";
+        cout<<"//                   \\/\\  \n";
+        cout<<"\\|   XXXX     XXXX   | /   \n";
+        cout<<" |   XXXX     XXXX   |/     \n";
+        cout<<" |   XXX       XXX   |      \n";
+        cout<<" |                   |      \n";
+        cout<<" \\__      XXX      __/     \n";
+        cout<<"   |\\     XXX     /|       \n";
+        cout<<"   | |           | |        \n";
+        cout<<"   | I I I I I I I |        \n";
+        cout<<"   |  I I I I I I  |        \n";
+        cout<<"   \\_             _/       \n";
+        cout<<"     \\_         _/         \n";
+        cout<<"       \\_______/           \n\n";
 
 
-                cout<<"Jogar novamente? "<<endl;
-                cout<<"[1] jogar novamente "<<endl;
-                cout<<"[2] Sair "<<endl;
-                cin>>opc;
+        cout<<"Jogar novamente? "<<endl;
+        cout<<"[1] jogar novamente "<<endl;
+        cout<<"[2] Sair "<<endl;
+        cin>>opc;
 
-                 if (opc == 1)
-                {
+         if (opc == 1)
+         {
 
-                    dificuldade();
+            dificuldade();
 
-                }else
-                {
-                    system("cls");
+         }else
+         {
 
-                    cout<<"Obrigado por jogar meu jogo v3 "<<endl;
+           system("cls");
+
+           cout<<"Obrigado por jogar meu jogo v3 "<<endl;
                    
-                }
+         }
          
                 
 
