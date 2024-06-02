@@ -13,6 +13,7 @@ using namespace std;
    void facil();
    void normal();
    void dificil();
+
    void ganhou();
    void perdeu();
 
@@ -77,6 +78,8 @@ void dificuldade(){
         case 3:
 
         dificil();
+
+        
     }
 
 }
@@ -325,6 +328,8 @@ void normal(){
 
 
 
+}
+
 void dificil(){
 
     setlocale(LC_ALL,"portuguese_Brazil");
@@ -336,7 +341,7 @@ void dificil(){
          tamanho = 0;
          acertos = 0;
          acerto = false;
-         vidas = 6;
+         vidas = 4;
          errou = 0;
 
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
@@ -384,7 +389,7 @@ void dificil(){
             cout << " |      " << (errou >= 1 ? '(' : ' ') << (errou >= 1 ? '_' : ' ') << (errou >= 1 ? ')' : ' ') << "  \n";
             cout << " |      " << (errou >= 2 ? '\\' : ' ') << (errou >= 2 ? '|' : ' ') << (errou >= 2 ? '/' : ' ') << "  \n";
             cout << " |       " << (errou >= 3 ? '|' : ' ') << "     \n";
-            cout << " |      " << (errou >= 4 ? '/' : ' ') << " " << (errou >= 5 ? '\\' : ' ') << "   \n";
+            cout << " |      " << (errou >= 3? '/' : ' ') << " " << (errou >= 3 ? '\\' : ' ') << "   \n";
             cout << " |              \n";
             cout << "_|___  ";
             for(i = 0; i < tamanho; i ++)
@@ -434,17 +439,15 @@ void dificil(){
 
          if(acertos == tamanho){
 
-                ganhou();
+            ganhou();
          
          }else
          {
+  
+            perdeu();
 
-               
-                perdeu();
          }   
-
-}
-
+ 
 }
 void ganhou (){
 
@@ -472,7 +475,7 @@ void ganhou (){
 
                     dificuldade();
 
-            }else
+            }else if( opc == 2) 
             {
                 system("cls");
 
@@ -517,7 +520,7 @@ void perdeu (){
 
             dificuldade();
 
-         }else
+         }else if( opc == 2)
          {
 
            system("cls");
