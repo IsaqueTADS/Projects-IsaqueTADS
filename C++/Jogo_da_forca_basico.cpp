@@ -4,7 +4,7 @@
 
 using namespace std;
 
-   char palavra[60], chute[60], forca[60], usada1[60], usada2[60], dica[60];
+   char palavra[60], chute[60], forca[60], usada1[60], dica[60];
    int opc, difi, i, i1, tamanho, dtamanho, vidas, acertos,errou;
    bool acerto;
     
@@ -13,7 +13,6 @@ using namespace std;
    void facil();
    void normal();
    void dificil();
-
    void ganhou();
    void perdeu();
 
