@@ -52,14 +52,14 @@ void dificuldade(){
     cout<<"[1] Facil  [3] Dificil"<<endl;
     cout<<"[2] Normal [ ] INSANOO"<<endl;
     cout<<"[5] Sair "<<endl;
-    cout<<"Escolha uma das opÁıes acima: "<<endl;
+    cout<<"Escolha uma das op√ß√µes acima: "<<endl;
     cin>>difi;
 
     while(difi == 5){
         system("cls");
 
 
-       cout<<"DESISTIU N… ;-; ;-; ;-; "<<endl;
+       cout<<"DESISTIU N√â ;-; ;-; ;-; "<<endl;
         break;
     }
     
@@ -99,7 +99,7 @@ void facil (){
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
          system("cls");
-         cout << "A palavra que vocÍ escolheu È? (ex, cidade, animal, frute, etc...) "<<endl;
+         cout << "A palavra que voc√™ escolheu √©? (ex, cidade, animal, frute, etc...) "<<endl;
          cin>>dica;
          system("cls");
 
@@ -172,7 +172,7 @@ void facil (){
                     acertos ++;
 
                 }
-                //esse for verifica se a letra est· na palavra secreta, e se estive coloca a letra no lugar certo.
+                //esse for verifica se a letra est√° na palavra secreta, e se estive coloca a letra no lugar certo.
 
             }
             
@@ -222,7 +222,7 @@ void normal(){
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
          system("cls");
-         cout << "A palavra que vocÍ escolheu È? (ex, cidade, animal, frute, etc...) "<<endl;
+         cout << "A palavra que voc√™ escolheu √©? (ex, cidade, animal, frute, etc...) "<<endl;
          cin>>dica;
          system("cls");
 
@@ -295,7 +295,7 @@ void normal(){
                     acertos ++;
 
                 }
-                //esse for verifica se a letra est· na palavra secreta, e se estive coloca a letra no lugar certo.
+                //esse for verifica se a letra est√° na palavra secreta, e se estive coloca a letra no lugar certo.
 
             }
             
@@ -344,7 +344,7 @@ void dificil(){
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
          system("cls");
-         cout << "A palavra que vocÍ escolheu È? (ex, cidade, animal, frute, etc...) "<<endl;
+         cout << "A palavra que voc√™ escolheu √©? (ex, cidade, animal, frute, etc...) "<<endl;
          cin>>dica;
          system("cls");
 
@@ -417,7 +417,7 @@ void dificil(){
                     acertos ++;
 
                 }
-                //esse for verifica se a letra est· na palavra secreta, e se estive coloca a letra no lugar certo.
+                //esse for verifica se a letra est√° na palavra secreta, e se estive coloca a letra no lugar certo.
 
             }
             
@@ -450,7 +450,7 @@ void ganhou (){
 
     setlocale(LC_ALL,"portuguese_Brazil");
 
-         cout<<"Parabens vocÍ acertou!! "<<endl;
+         cout<<"Parabens voc√™ acertou!! "<<endl;
          cout<<"       ___________      \n";
          cout<<"      '._==_==_=_.'     \n";
          cout<<"      .-\\:      /-.    \n";
@@ -486,7 +486,7 @@ void perdeu (){
 
     setlocale(LC_ALL,"portuguese_Brazil");
 
-        cout<<"Poxa vocÍ perdeu e foi enfocardo ;-;-; ";
+        cout<<"Poxa voc√™ perdeu e foi enfocardo ;-;-; ";
         cout<<"A palavra era: "<<palavra<<endl;
             
         cout<<"    _______________         \n";
