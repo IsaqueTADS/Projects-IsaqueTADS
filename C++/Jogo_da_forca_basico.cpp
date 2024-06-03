@@ -30,7 +30,6 @@ int main(){
 }
 
 
-
 void inicio(){
 
     cout<<"JOGO DA FORCA V2.0 "<<endl;
