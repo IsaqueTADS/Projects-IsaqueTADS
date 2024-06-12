@@ -1,7 +1,6 @@
 #include <iostream>
 #include <locale.h>
-#include <stdbool.h> //biblioteca para o uso do system("cls")
-#include <cstdlib> //bliblioteca para o uso do exit();
+#include <stdbool.h>
 
 using namespace std;
 
@@ -16,7 +15,6 @@ using namespace std;
    void dificil();
    void ganhou();
    void perdeu();
- 
 
 int main(){
 
@@ -25,7 +23,7 @@ int main(){
     
     inicio();
     dificuldade();
-   
+    
 
 
     return 0;
@@ -479,9 +477,8 @@ void ganhou (){
             }else if( opc == 2) 
             {
                 system("cls");
-                cout<<"Obrigado por jogar meu jogo v3 "<<endl;
 
-                exit(0); //indica que o progama se encerrou, biblioteca cstdlib
+                cout<<"Obrigado por jogar meu jogo v3 "<<endl;
                     
             }
     
@@ -522,20 +519,16 @@ void perdeu (){
 
             dificuldade();
 
-         }else{
-                   
+         }else if( opc == 2)
+         {
+
            system("cls");
+
            cout<<"Obrigado por jogar meu jogo v3 "<<endl;
-
-           exit(0); //indica que o progama se encerrou, biblioteca cstdlib
-
+                   
          }
-
-           
          
-         
-}   
+                
 
 
-
-
+}
