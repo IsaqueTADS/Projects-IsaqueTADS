@@ -63,7 +63,8 @@ void dificuldade(){
 
 
        cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
-        break;
+
+       exit(0);
     }
     
     switch(difi){
