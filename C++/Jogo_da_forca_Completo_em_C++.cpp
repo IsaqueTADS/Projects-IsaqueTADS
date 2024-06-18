@@ -61,7 +61,8 @@ void dificuldade(){
 
 
        cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
-        break;
+
+       exit(0);
     }
     
     switch(difi){
@@ -100,7 +101,7 @@ void facil (){
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
          system("cls");
-         cout << "A palavra que você escolheu é? (ex, cidade, animal, frute, etc...) "<<endl;
+         cout << "A palavra que você escolheu é?  Ex:(cidade, animal, frute, etc...) "<<endl;
          cin>>dica;
          system("cls");
 
@@ -224,7 +225,7 @@ void normal(){
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
          system("cls");
-         cout << "A palavra que você escolheu é? (ex, cidade, animal, frute, etc...) "<<endl;
+         cout << "A palavra que você escolheu é?  Ex:(cidade, animal, frute, etc...) "<<endl;
          cin>>dica;
          system("cls");
 
@@ -346,7 +347,7 @@ void dificil(){
          cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
          cin>>palavra;
          system("cls");
-         cout << "A palavra que você escolheu é? (ex, cidade, animal, frute, etc...) "<<endl;
+         cout << "A palavra que você escolheu é?  Ex:(cidade, animal, frute, etc...) "<<endl;
          cin>>dica;
          system("cls");
 
