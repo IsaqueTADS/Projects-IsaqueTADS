@@ -85,6 +85,7 @@ void dificuldade(){
 }
 
 void facil (){
+    //add
 
     setlocale(LC_ALL,"portuguese_Brazil");
 
