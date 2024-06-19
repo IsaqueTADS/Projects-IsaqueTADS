@@ -5,15 +5,13 @@
 
 using namespace std;
 
-   char palavra[60], chute[60], forca[60], usada1[60], dica[60];
+   char palavra[60], chute[1], forca[60], p_usada[60], dica[60];
    int opc, difi, i, i1, tamanho, dtamanho, vidas, acertos,errou;
    bool acerto;
     
    void inicio ();
    void dificuldade ();
    void facil();
-   void normal();
-   void dificil();
    void ganhou();
    void perdeu();
  
@@ -61,10 +59,9 @@ void dificuldade(){
     while(difi == 5){
         system("cls");
 
+        cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
 
-       cout<<"DESISTIU NÉ ;-; ;-; ;-; "<<endl;
-
-       exit(0);
+        exit(0);
     }
     
     switch(difi){
@@ -73,22 +70,12 @@ void dificuldade(){
 
         facil();
         
-        case 2:
-
-        normal();
-
-        case 3:
-
-        dificil();
-
-        
     }
 
 }
 
 void facil (){
-    //add
-
+   
     setlocale(LC_ALL,"portuguese_Brazil");
 
      system("cls");
@@ -120,25 +107,29 @@ void facil (){
          {
 
             forca[i] = '_';
-            usada1[i] = '-';
+            p_usada[i] = '-';
+            /*Aqui os dois vetores s[ao prenchidos até o tamanho 60, porém ao decorrer do código
+            apenas o tamanho da palavra secreta será exibida */
 
          }
          
          while((vidas > 0) && (acertos < tamanho))
          {
+           
             cout<<"Dica: "<<dica<<endl;
            
             cout<<"Vidas restante: "<<vidas<<endl;
 
             cout<<"Palavras usadas: ";
 
-            for(i = 0; i < tamanho; i ++)
-            {
-
-                cout<<chute[i];
-
+        for( i = 0; i < 60; i ++){
+            if(p_usada[i] != '-'){
+                cout<<p_usada[i]<<"-";
             }
+            //Esse bloco mostra na tela as palavras que o jogador utilizou.
+        }
 
+     
             cout<<"\n";
 
             cout << "  _______       \n";
@@ -160,27 +151,21 @@ void facil (){
 
             cout<<"\n"<<endl;
             cout<<"Chute uma letra: "<<endl;
-            for(i = 0; i < tamanho; i++)
-            {
-                cin>>chute[i];
-                break;
-                //for para pedir ao jogador para chutar uma letra, o break vem para
-                // chutar uma vez e logo em seguida executar o resto até voltar nele dnv.
-            }   //toda vez que o jogador chutar vai ser armazenado em uma parte do array/vetor.
+            cin>>chute;
             
+            p_usada[i1 ++] = chute[0]; // atribui para o vetor usadas todos caracter do vetor chute na posição 0.
 
             for(i = 0; i < tamanho; i ++)
             {
-                for(i1 = 0; i1 < tamanho; i1++){
 
-                if (palavra[i] == chute[i1]){
+                if (palavra[i] == chute[0]){
                     acerto = true;
                     forca[i] = palavra[i];
                     acertos ++;
 
                 }
                 //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
-                }
+
             }
             
 
@@ -188,7 +173,8 @@ void facil (){
 
                 vidas --;
                 errou ++;
-
+                //esse bloco serve para contabilizara as vidas, caso a pessoa erre vai diminuir a vida.
+                //serve tambem para incrementar o vlaor da variavel errou, assim podendo formar a forca.
             }
 
              acerto = false;
@@ -213,247 +199,7 @@ void facil (){
 }
 
 
-void normal(){
 
-    setlocale(LC_ALL,"portuguese_Brazil");
-
-     system("cls");
-
-         i = 0;
-         i1 = 1;
-         tamanho = 0;
-         acertos = 0;
-         acerto = false;
-         vidas = 6;
-         errou = 0;
-
-         cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
-         cin>>palavra;
-         system("cls");
-         cout << "A palavra que você escolheu é?  Ex:(cidade, animal, frute, etc...) "<<endl;
-         cin>>dica;
-         system("cls");
-
-         while(palavra[i] != '\0' )
-         {
-
-            i ++;
-            tamanho ++;
-
-         }
-
-         for(i = 0; i < 60; i++)
-         {
-
-            forca[i] = '_';
-            usada1[i] = '-';
-
-         }
-         
-         while((vidas > 0) && (acertos < tamanho))
-         {
-             cout<<"Dica: "<<dica<<endl;
-
-            cout<<"Vidas restante: "<<vidas<<endl;
-
-            cout<<"Palavras usadas: ";
-
-            for(i = 0; i < tamanho; i ++)
-            {
-
-                cout<<usada1[i];
-
-            }
-
-            cout<<"\n";
-
-            cout << "  _______       \n";
-            cout << " |/      |      \n";
-            cout << " |      " << (errou >= 1 ? '(' : ' ') << (errou >= 1 ? '_' : ' ') << (errou >= 1 ? ')' : ' ') << "  \n";
-            cout << " |      " << (errou >= 2 ? '\\' : ' ') << (errou >= 2 ? '|' : ' ') << (errou >= 2 ? '/' : ' ') << "  \n";
-            cout << " |       " << (errou >= 3 ? '|' : ' ') << "     \n";
-            cout << " |      " << (errou >= 4 ? '/' : ' ') << " " << (errou >= 5 ? '\\' : ' ') << "   \n";
-            cout << " |              \n";
-            cout << "_|___  ";
-            for(i = 0; i < tamanho; i ++)
-            {
-                
-            cout<<forca[i];
-
-            } // esse for exibe os chutes se for certo.
-
-            
-
-            cout<<"\n"<<endl;
-            cout<<"Chute uma letra: "<<endl;
-            for(i = 0; i < tamanho; i++)
-            {
-                cin>>chute[i];
-                break;
-            }
-            
-
-            for(i = 0; i < tamanho; i ++)
-            {
-                for(i1 = 0; i1 < tamanho; i1++)
-
-                if (palavra[i] == chute[i1]){
-                    acerto = true;
-                    forca[i] = palavra[i];
-                    acertos ++;
-
-                }
-                //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
-
-            }
-            
-
-            if(!acerto){
-
-                vidas --;
-                errou ++;
-
-            }
-
-             acerto = false;
-             system("cls");
- 
-         }
-
-         if(acertos == tamanho){
-
-                ganhou();
-         
-         }else
-         {
-
-               
-                perdeu();
-         }   
-
-
-
-}
-
-void dificil(){
-
-    setlocale(LC_ALL,"portuguese_Brazil");
-
-     system("cls");
-
-         i = 0;
-         i1 = 1;
-         tamanho = 0;
-         acertos = 0;
-         acerto = false;
-         vidas = 4;
-         errou = 0;
-
-         cout << "Qual a palavra que o jogador vai adivinhar? "<<endl;
-         cin>>palavra;
-         system("cls");
-         cout << "A palavra que você escolheu é?  Ex:(cidade, animal, frute, etc...) "<<endl;
-         cin>>dica;
-         system("cls");
-
-         while(palavra[i] != '\0' )
-         {
-
-            i ++;
-            tamanho ++;
-
-         }
-
-         for(i = 0; i < 60; i++)
-         {
-
-            forca[i] = '_';
-            usada1[i] = '-';
-
-         }
-         
-         while((vidas > 0) && (acertos < tamanho))
-         {
-             cout<<"Dica: "<<dica<<endl;
-
-            cout<<"Vidas restante: "<<vidas<<endl;
-
-            cout<<"Palavras usadas: ";
-
-            for(i = 0; i < tamanho; i ++)
-            {
-
-                cout<<usada1[i];
-
-            }
-
-            cout<<"\n";
-
-            cout << "  _______       \n";
-            cout << " |/      |      \n";
-            cout << " |      " << (errou >= 1 ? '(' : ' ') << (errou >= 1 ? '_' : ' ') << (errou >= 1 ? ')' : ' ') << "  \n";
-            cout << " |      " << (errou >= 2 ? '\\' : ' ') << (errou >= 2 ? '|' : ' ') << (errou >= 2 ? '/' : ' ') << "  \n";
-            cout << " |       " << (errou >= 3 ? '|' : ' ') << "     \n";
-            cout << " |      " << (errou >= 3? '/' : ' ') << " " << (errou >= 3 ? '\\' : ' ') << "   \n";
-            cout << " |              \n";
-            cout << "_|___  ";
-            for(i = 0; i < tamanho; i ++)
-            {
-                
-            cout<<forca[i];
-
-            } // esse for exibe os chutes se for certo.
-
-            
-
-            cout<<"\n"<<endl;
-            cout<<"Chute uma letra: "<<endl;
-            for(i = 0; i < tamanho; i++)
-            {
-                cin>>chute[i];
-                break;
-            }
-            
-
-            for(i = 0; i < tamanho; i ++)
-            {
-                for(i1 = 0; i1 < tamanho; i1++)
-
-                if (palavra[i] == chute[i1]){
-                    acerto = true;
-                    forca[i] = palavra[i];
-                    acertos ++;
-
-                }
-                //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
-
-            }
-            
-
-            if(!acerto){
-
-                vidas --;
-                errou ++;
-
-            }
-
-             acerto = false;
-             system("cls");
- 
-         }
-
-         if(acertos == tamanho){
-
-            ganhou();
-         
-         }else
-         {
-  
-            perdeu();
-
-         }   
- 
-}
 void ganhou (){
 
     setlocale(LC_ALL,"portuguese_Brazil");
@@ -539,7 +285,3 @@ void perdeu (){
          
          
 }   
-
-
-
-
