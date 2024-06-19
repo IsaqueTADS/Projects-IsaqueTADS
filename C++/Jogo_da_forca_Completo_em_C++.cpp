@@ -101,7 +101,8 @@ void facil (){
 
             i ++;
             tamanho ++;
-
+            /*esse bloco verifica o tamanho da palavra, o \0 indica o fim da palavra, enquando n chegar nele da lopp
+            e incrementa o tamanho*/
          }
 
          for(i = 0; i < 60; i++)
@@ -156,7 +157,7 @@ void facil (){
             
             system("cls");
 
-            if (chuteRepetido(chute[0])){
+            if (chuteRepetido(chute[0])){ //recebe uma resposta booleana da função chuteRepetido(), true a palavra é repetida, false é valida.
 
                 cout<<"Palavra repetida!!\nPerdeu uma vida para ficar esperto <3\n "<<endl;
                 vidas --;
@@ -213,7 +214,7 @@ void facil (){
 
 }
 
-bool chuteRepetido(char caracter){
+bool chuteRepetido(char caracter){ // recebe informação do chute do jogo.
     for( i = 0; i <60; i ++) {
 
         if ( p_usada[i] == caracter){
