@@ -14,6 +14,7 @@ using namespace std;
    void facil();
    void ganhou();
    void perdeu();
+   bool chuteRepetido(char caracter);
  
 
 int main(){
@@ -78,7 +79,7 @@ void facil (){
    
     setlocale(LC_ALL,"portuguese_Brazil");
 
-     system("cls");
+        system("cls");
 
          i = 0;
          i1 = 1;
@@ -153,33 +154,47 @@ void facil (){
             cout<<"Chute uma letra: "<<endl;
             cin>>chute;
             
-            p_usada[i1 ++] = chute[0]; // atribui para o vetor usadas todos caracter do vetor chute na posição 0.
+            system("cls");
 
-            for(i = 0; i < tamanho; i ++)
-            {
+            if (chuteRepetido(chute[0])){
 
-                if (palavra[i] == chute[0]){
-                    acerto = true;
-                    forca[i] = palavra[i];
-                    acertos ++;
-
-                }
-                //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
-
-            }
-            
-
-            if(!acerto){
-
+                cout<<"Palavra repetida!!\nPerdeu uma vida para ficar esperto <3\n "<<endl;
                 vidas --;
                 errou ++;
-                //esse bloco serve para contabilizara as vidas, caso a pessoa erre vai diminuir a vida.
-                //serve tambem para incrementar o vlaor da variavel errou, assim podendo formar a forca.
+
+            }else { 
+
+                p_usada[i1 ++] = chute[0]; // atribui para o vetor usadas todos caracter do vetor chute na posição 0.
+
+                for(i = 0; i < tamanho; i ++)
+                {
+
+                    if (palavra[i] == chute[0]){
+                        acerto = true;
+                        forca[i] = palavra[i];
+                        acertos ++;
+
+                    }
+                    //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
+
+                }
+                
+
+                if(!acerto){
+
+                    vidas --;
+                    errou ++;
+                    //esse bloco serve para contabilizara as vidas, caso a pessoa erre vai diminuir a vida.
+                    //serve tambem para incrementar o vlaor da variavel errou, assim podendo formar a forca.
+                }
+
+                acerto = false;
+                system("cls");
+    
             }
 
-             acerto = false;
-             system("cls");
- 
+           
+
          }
 
          if(acertos == tamanho){
@@ -198,7 +213,20 @@ void facil (){
 
 }
 
+bool chuteRepetido(char caracter){
+    for( i = 0; i <60; i ++) {
 
+        if ( p_usada[i] == caracter){
+            
+            return true;//chute repetido.
+        }
+        
+    }
+
+    return false; //chute valido.
+
+
+}
 
 void ganhou (){
 
