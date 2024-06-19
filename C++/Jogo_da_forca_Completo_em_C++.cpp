@@ -135,7 +135,7 @@ void facil (){
             for(i = 0; i < tamanho; i ++)
             {
 
-                cout<<usada1[i];
+                cout<<chute[i];
 
             }
 
@@ -164,12 +164,14 @@ void facil (){
             {
                 cin>>chute[i];
                 break;
-            }
+                //for para pedir ao jogador para chutar uma letra, o break vem para
+                // chutar uma vez e logo em seguida executar o resto até voltar nele dnv.
+            }   //toda vez que o jogador chutar vai ser armazenado em uma parte do array/vetor.
             
 
             for(i = 0; i < tamanho; i ++)
             {
-                for(i1 = 0; i1 < tamanho; i1++)
+                for(i1 = 0; i1 < tamanho; i1++){
 
                 if (palavra[i] == chute[i1]){
                     acerto = true;
@@ -178,7 +180,7 @@ void facil (){
 
                 }
                 //esse for verifica se a letra está na palavra secreta, e se estive coloca a letra no lugar certo.
-
+                }
             }
             
 
