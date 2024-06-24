@@ -122,6 +122,8 @@ void facil (){
            
             cout<<"Vidas restante: "<<vidas<<endl;
 
+            cout<<"A palavra tem-"<<tamanho<<"-caracter"<<endl;
+
             cout<<"Palavras usadas: ";
 
         for( i = 0; i < 60; i ++){
