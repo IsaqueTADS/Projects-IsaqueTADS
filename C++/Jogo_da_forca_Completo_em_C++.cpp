@@ -6,7 +6,7 @@
 using namespace std;
 
    char palavra[60], chute[1], forca[60], p_usada[60], dica[60];
-   int opc, difi, i, i1, tamanho, dtamanho, vidas, acertos,errou;
+   int opc, difi, i, i1, tamanho, dtamanho, vidas, acertos,errou,cdica;
    bool acerto;
     
    void inicio ();
@@ -117,8 +117,11 @@ void facil (){
          
          while((vidas > 0) && (acertos < tamanho))
          {
-           
-            cout<<"Dica: "<<dica<<endl;
+           if(cdica = 5 == errou) {
+
+                cout<<"Dica: "<<dica<<endl;
+
+            }
            
             cout<<"Vidas restante: "<<vidas<<endl;
 
