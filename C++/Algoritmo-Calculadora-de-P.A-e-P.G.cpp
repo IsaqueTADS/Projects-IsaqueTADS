@@ -1,6 +1,7 @@
 #include<iostream>
 #include<locale.h>
 #include<math.h>
+#include<stdbool.h>
 
 using namespace std;
 
@@ -23,7 +24,10 @@ int main(){
     cin>>opcao;
     
     switch(opcao){
+      
         case 1:
+        system("cls");
+
         cout<<"Progressão Aritimética "<<endl;
 
         cout<<"Digite o Primeiro termo\n";
@@ -60,6 +64,8 @@ int main(){
         break;
 
         case 2:
+        system("cls");
+        
         cout<<"Digite o primeiro termo "<<endl;
         cin>>a1;
         cout<<"Digite o valor da razão "<<endl;

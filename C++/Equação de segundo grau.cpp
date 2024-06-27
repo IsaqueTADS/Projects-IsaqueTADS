@@ -1,6 +1,7 @@
 #include<iostream>
 #include<locale.h>
 #include<math.h>
+#include<stdbool.h>
 using namespace std;
 int main (){
     setlocale(LC_ALL,"portuguese");
@@ -19,6 +20,8 @@ int main (){
     cout<<"Digite um numero para c "<<endl;
     cin>>c;
     
+    system("cls");
+
     if (a != 0) {
 
         delta=(b * b)-4*a*c;
